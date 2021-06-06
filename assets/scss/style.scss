@@ -6,13 +6,20 @@
     src: url('../fonts/GothamBook.woff2') format('woff2'),
          url('../fonts/GothamBook.woff') format('woff');
     font-weight: 350;
-    font-style: normal;
+    // font-style: normal;
   }
 @font-face {
     font-family: 'GothamBold';
     src: url('../fonts/gothambold.woff2') format('woff2'),
          url('../fonts/gothambold1.woff') format('woff');
     font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+         url('../fonts/OpenSans-Regular.woff') format('woff');
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -33,7 +40,7 @@ a{
 .container {
     margin: 0 auto;
     width: 90%;
-    max-width: 1110px;
+    max-width: 1170px;
 }
 main {
     width: 100%;
@@ -68,7 +75,7 @@ header{
     width: 100%;
     height: 108px;
     max-width: inherit;
-    z-index: 99;
+    z-index: 100;
     transition: all .2s ease;
     // background-color: #efefef;
     position: fixed;
@@ -121,9 +128,14 @@ header{
         position: absolute;
         left: -24px;
         top: 0;
+        transition:  all 1.5s ease;
     }
     &:hover{
         border-bottom: 2px solid #fff;
+        transition:  all 1.5s ease;
+        &::before{
+            background-color: #fff;
+        }
     }
 }
 .soc_list-item{
@@ -146,7 +158,9 @@ header{
     }
 }
 #home{
+    position: relative;
     .slider{
+        height: 100%;
         .slider_item{
             width: 100%;
             background: url(../images/jpeg/main_fon.png) no-repeat;
@@ -176,4 +190,176 @@ header{
         text-transform: uppercase;
         color: #fff;
     }
+}
+.scroll {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid $base_color;
+    position: absolute;
+    left: 50%;
+    bottom: 48px;
+    z-index: 99;
+    cursor: pointer;
+    &:after{
+        content: '';
+        display: block;
+        width: 5px;
+        height: 5px;
+        background: transparent;
+        border-right: 2px solid $base_color;
+        border-bottom: 2px solid $base_color;
+        position: absolute;
+        left: 42%;
+        top: 34%;
+        transform: rotate(45deg);
+        // поправить позицию по пп
+    }
+    &:hover{
+        background-color: #fff;
+        &:after{
+            border-right: 2px solid #7d5dfa;
+            border-bottom: 2px solid #7d5dfa;
+        }
+    }
+}
+
+#what_we_do{
+    height: 200vh;
+    background-color: #fff;
+    padding: 98px 0 0 0;
+    margin-bottom: 140px; 
+}
+.section_header{
+    font-family: 'GothamBold', sans-serif;
+    font-size: 44px;
+    text-transform: uppercase;
+    line-height: 44px;
+    color:#2c4058;
+    text-align: center;
+    position: relative;
+    margin-bottom: 36px;
+}
+.section_fheader{
+    margin-bottom: 170px;
+    &::before{
+        content: '';
+        display: block;
+        width: 100px;
+        border-top: 2px solid #2c4058;
+        position: absolute;
+        top: -30%;
+        left: 45%;
+    }
+}
+.img_wrap{
+    background-color: #cfe4f1;
+    position: relative;
+    z-index: 2;
+    &-blue::after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -70px;
+        left: -42%;
+        background-color: #55b7ff;
+        z-index: -1;
+    }
+    &-violet::after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -70px;
+        right: -42%;
+        background-color: #7e5aff;
+        z-index: -1;
+    }
+}
+
+h3{
+    font-family: 'GothamBook', sans-serif;
+    color: #2c4058;
+    font-size: 22px;
+    text-transform: uppercase;
+    line-height: 22px;
+    margin-bottom: 16px;
+}
+.text_wrap-left {
+    padding: 58px 0 0 70px;
+    .section_header{
+        text-align: left;
+    }
+}
+.text_wrap-right{
+    padding: 58px 70px 0 0;
+    .section_header{
+        text-align: left;
+    }
+}
+.section_p{
+    font-family: 'OpenSans', sans-serif;
+    font-size: 18px;
+    color: #4b5562;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+.rev{
+    flex-direction: row-reverse;
+}
+.section_content-wrap{
+    margin-bottom: 210px;
+}
+.button {
+    margin-bottom: 40px;
+    a{
+        display: inline-block;
+        text-decoration: none;
+        font-family: 'GothamBook',sans-serif;
+        @include fz(14);
+        letter-spacing: 1.1px;
+        line-height: 14px;
+        color: #2c4058;
+        text-transform: uppercase;
+        background-color: #fff;
+        padding: 20px 40px;
+        cursor: pointer;
+        transition: all .9s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 2;
+        border: 1px solid #2c4058;
+        &:after {
+            content:'';
+            position: absolute;
+            top: 0;
+            left: -20%;
+            width: 0%;
+            height: 100%;
+            background-color: rgba(44, 64, 88, .9);
+            transition: all 1.2s ease;
+            transform: skew(-45deg);
+            z-index: -1;
+        }
+        &:hover{
+            color: #fff;
+            border: 1px solid rgba(44, 64, 88, .9);
+            &:after {
+                width: 150%;
+            }
+        }
+    }
+
+}
+.address_span{
+    color: #2c4058;
+    font-family: 'GothamBook', sans-serif;
+    font-style: italic;
+    font-size: 18px;
 }

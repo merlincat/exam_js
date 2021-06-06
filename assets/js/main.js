@@ -5,10 +5,10 @@ $(document).ready(function() {
         autoWidth: false,
         slideMove: 1, // slidemove will be 1 if loop is true
         slideMargin: 0,
-        speed: 2000, //ms'
+        speed: 3000, //ms'
         auto: true,
         loop: true,
-        pause: 3000,
+        pause: 3500,
         controls: false,
         vertical:true,
         verticalHeight:720,
