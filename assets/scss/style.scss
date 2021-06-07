@@ -568,9 +568,58 @@ h3{
 }
 .form_wrap{
     width: 100%;
-
+    .form_input{
+        display: inline-block;
+        text-align: start;
+        background-color: transparent;
+        cursor: text;
+        font-family: 'GothamBook', sans-serif;
+        font-size: 18px;
+        color: rgba(44, 64, 88, .9);
+        line-height: 18px;
+        border-width: 100%;
+        border-style: none;
+        border-bottom: 1px solid rgba(44, 64, 88, .2);
+        padding: 5px 0 15px 0;
+        width: 100%;
+        outline: 0;
+        margin-bottom: 25px;
+        transition: all .7s ease;
+        &::placeholder{
+            color: rgba(44, 64, 88, .4);
+        }
+        &:focus{
+            border-bottom: 1px solid rgba(44, 64, 88, .9);
+        }
+    }
+    .form_btn{
+        width: 50%;
+        display: block;
+        color: #2c4058;
+        text-align: center;
+        background-color: transparent;
+        font: 350 14px 'GothamBook';
+        line-height: 14px;
+        text-transform: uppercase;
+        padding: 20px 0;
+        border: 1px solid #2c4058;
+        box-shadow: none;
+        transition: all .6s ease;
+        outline: 0;
+        &:active{
+            box-shadow: 0 2px 5px 2px rgba(44, 64, 88, .9);
+        }
+        &:hover{
+            box-shadow: 0 0 3px #999;
+            background-color: rgba(132, 157, 241, 0.9);
+            border: none;
+            color: #fff;
+        }
+    }
 }
-
+.btn-wrap{
+    justify-content: flex-end;
+}
 
 #footer{
     background: url(../images/jpeg/footer_fon.png) no-repeat;
