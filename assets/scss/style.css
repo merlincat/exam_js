@@ -236,6 +236,19 @@ header .container {
   margin-bottom: 140px;
   overflow-x: hidden;
 }
+#what_we_do .section_fheader {
+  margin-bottom: 170px;
+  position: relative;
+}
+#what_we_do .section_fheader::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100px;
+  border-top: 2px solid #2c4058;
+  left: 46%;
+  top: -40px;
+}
 
 .section_header {
   font-family: "GothamBold", sans-serif;
@@ -246,19 +259,6 @@ header .container {
   text-align: center;
   position: relative;
   margin-bottom: 36px;
-}
-
-.section_fheader {
-  margin-bottom: 170px;
-}
-.section_fheader::before {
-  content: "";
-  display: block;
-  width: 100px;
-  border-top: 2px solid #2c4058;
-  position: absolute;
-  top: -30%;
-  left: 45%;
 }
 
 .img_wrap {

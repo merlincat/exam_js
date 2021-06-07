@@ -253,6 +253,19 @@ header{
     padding: 98px 0 0 0;
     margin-bottom: 140px; 
     overflow-x: hidden;
+    .section_fheader{
+        margin-bottom: 170px;
+        position: relative;
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100px;
+            border-top: 2px solid #2c4058;
+            left: 46%;
+            top: -40px;
+        }
+    }
 }
 .section_header{
     font-family: 'GothamBold', sans-serif;
@@ -264,18 +277,7 @@ header{
     position: relative;
     margin-bottom: 36px;
 }
-.section_fheader{
-    margin-bottom: 170px;
-    &::before{
-        content: '';
-        display: block;
-        width: 100px;
-        border-top: 2px solid #2c4058;
-        position: absolute;
-        top: -30%;
-        left: 45%;
-    }
-}
+
 .img_wrap{
     background-color: #cfe4f1;
     position: relative;
