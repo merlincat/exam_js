@@ -1,6 +1,6 @@
 "use strict";
 
-$(document).ready(function () {
+$(function () {
   $("#slider").lightSlider({
     item: 1,
     mode: 'fade',
@@ -41,6 +41,22 @@ $(document).ready(function () {
     //       }
     //     }
     //   ],
+
+  });
+  $("#cards_list").lightSlider({
+    item: 3,
+    mode: 'slide',
+    autoWidth: false,
+    slideMove: 1,
+    // slidemove will be 1 if loop is true
+    slideMargin: 30,
+    speed: 2000,
+    //ms'
+    auto: true,
+    loop: true,
+    pause: 2500,
+    controls: true // verticalHeight:720,
+    // verticalSwiping: true,
 
   });
 });

@@ -12,9 +12,20 @@
   font-style: normal;
 }
 @font-face {
+  font-family: "GothamMedium";
+  src: url("../fonts/gotham-medium-webfont.woff2") format("woff2"), url("../fonts/gotham-medium-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
   font-family: "OpenSans";
   src: url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "lg";
+  src: url("../fonts/lg.woff2") format("woff2"), url("../fonts/lg.woff") format("woff");
   font-style: normal;
 }
 html {
@@ -39,17 +50,16 @@ main {
   display: flex;
 }
 
-.lSSlideOuter .lSPager.lSpg {
+#home .lSSlideOuter .lSPager.lSpg {
   position: absolute;
   right: 2%;
   top: 35%;
 }
-
-.lSSlideOuter .lSPager.lSpg > li {
+#home .lSSlideOuter .lSPager.lSpg > li {
   display: block;
   margin-bottom: 40px;
 }
-.lSSlideOuter .lSPager.lSpg > li a {
+#home .lSSlideOuter .lSPager.lSpg > li a {
   background-color: transparent;
   border: 2px solid #fff;
   border-radius: 30px;
@@ -149,40 +159,6 @@ header .container {
   color: #7d5dfa;
 }
 
-#home {
-  position: relative;
-}
-#home .slider {
-  height: 100%;
-}
-#home .slider .slider_item {
-  width: 100%;
-  background: url(../images/jpeg/main_fon.png) no-repeat;
-  background-size: cover;
-  height: 100vh;
-  max-height: 800px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.slider_item h2 {
-  font-family: "GothamBold", sans-serif;
-  font-size: 80px;
-  line-height: 80px;
-  text-transform: uppercase;
-  color: #fff;
-  letter-spacing: 2px;
-  margin-bottom: 38px;
-}
-.slider_item h3 {
-  font-family: "GothamBook", sans-serif;
-  font-size: 18px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: #fff;
-}
-
 .scroll {
   width: 40px;
   height: 40px;
@@ -192,8 +168,6 @@ header .container {
   background-color: transparent;
   border: 2px solid #fff;
   position: absolute;
-  left: 50%;
-  bottom: 48px;
   z-index: 99;
   cursor: pointer;
 }
@@ -218,11 +192,49 @@ header .container {
   border-bottom: 2px solid #7d5dfa;
 }
 
+#home {
+  position: relative;
+}
+#home .slider {
+  height: 100%;
+}
+#home .slider .slider_item {
+  width: 100%;
+  background: url(../images/jpeg/main_fon.png) no-repeat;
+  background-size: cover;
+  height: 100vh;
+  max-height: 800px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#home .scroll {
+  left: 50%;
+  bottom: 48px;
+}
+
+.slider_item h2 {
+  font-family: "GothamBold", sans-serif;
+  font-size: 80px;
+  line-height: 80px;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: 38px;
+}
+.slider_item h3 {
+  font-family: "GothamBook", sans-serif;
+  font-size: 18px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
 #what_we_do {
-  height: 200vh;
   background-color: #fff;
   padding: 98px 0 0 0;
   margin-bottom: 140px;
+  overflow-x: hidden;
 }
 
 .section_header {
@@ -283,7 +295,6 @@ h3 {
   font-size: 22px;
   text-transform: uppercase;
   line-height: 22px;
-  margin-bottom: 16px;
 }
 
 .text_wrap-left {
@@ -362,4 +373,133 @@ h3 {
   font-family: "GothamBook", sans-serif;
   font-style: italic;
   font-size: 18px;
+}
+
+#latest_news {
+  width: 100%;
+  background: url(../images/jpeg/news_fon.png) no-repeat;
+  background-size: cover;
+  padding: 178px 0 140px;
+}
+#latest_news .lSSlideOuter {
+  position: relative;
+  overflow: visible;
+}
+#latest_news .lSSlideWrapper {
+  position: static;
+}
+#latest_news .lSAction > .lSPrev {
+  left: -7%;
+  top: 44%;
+}
+#latest_news .lSAction > .lSNext {
+  right: -7%;
+  top: 44%;
+}
+#latest_news .section_header {
+  color: #fff;
+  margin-bottom: 100px;
+  font-family: "GothamMedium", sans-serif;
+  font-weight: 400;
+  letter-spacing: normal;
+  position: relative;
+}
+#latest_news .section_header::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100px;
+  border-top: 1px solid #fff;
+  left: 46%;
+  top: -40px;
+}
+#latest_news .lSSlideOuter .lSPager.lSpg > li {
+  margin-top: 58px;
+}
+#latest_news .lSSlideOuter .lSPager.lSpg > li a {
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  display: inline-block;
+  height: 9px;
+  overflow: hidden;
+  text-indent: -999em;
+  width: 9px;
+  position: relative;
+  z-index: 99;
+  transition: all 0.5s linear 0s;
+}
+#latest_news .cards_wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#latest_news .cards_wrap .scroll-left {
+  left: -7%;
+  top: 40%;
+  transform: rotate(90deg);
+}
+#latest_news .cards_wrap .scroll-right {
+  right: -7%;
+  top: 40%;
+  transform: rotate(-90deg);
+}
+
+.card {
+  height: 514px;
+  background-color: #fff;
+}
+.card .card_image-wrap img {
+  width: 100%;
+  object-fit: cover;
+}
+.card .card_content-wrap {
+  padding: 24px 20px;
+  flex-direction: column;
+  height: 100%;
+}
+.card .card_content-wrap .section_p {
+  height: 60px;
+  overflow-y: hidden;
+  line-height: 28px;
+  font-family: "OpenSans", sans-serif;
+  font-weight: 400;
+  color: #4b5562;
+}
+.card .card_content-wrap h3 {
+  height: 75px;
+  line-height: 34px;
+  overflow-y: hidden;
+  color: #2c4058;
+}
+
+.author_wrap .author_photo-wrap {
+  margin-right: 20px;
+}
+.author_wrap .author_photo-wrap img {
+  width: 100%;
+  object-fit: cover;
+}
+.author_wrap .author_info-wrap h3 {
+  font-weight: 350;
+  font-size: 18px;
+  line-height: 34px;
+  letter-spacing: normal;
+  height: auto;
+}
+.author_wrap .author_info-wrap .data_span {
+  font-family: "GothamBook";
+  font-weight: 350;
+  font-size: 14px;
+  color: #55b7ff;
+}
+
+.side_img-wrap {
+  flex-wrap: wrap;
+}
+
+.container-mini {
+  width: 90%;
+  max-width: 770px;
+  margin: 0 auto;
 }
