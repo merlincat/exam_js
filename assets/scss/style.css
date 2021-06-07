@@ -511,3 +511,72 @@ h3 {
   max-width: 770px;
   margin: 0 auto;
 }
+
+#get_in_touch {
+  width: 90%;
+  max-width: 870px;
+  margin: 0 auto;
+  padding: 115px 110px;
+  background: url(../images/jpeg/get_in_touch_fon.png) no-repeat;
+  background-size: cover;
+}
+#get_in_touch .section_header {
+  font-family: "GothamMedium";
+  font-weight: 400;
+  margin-bottom: 60px;
+}
+#get_in_touch .section_header::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100px;
+  border-top: 2px solid #2c4058;
+  left: 46%;
+  top: -30px;
+}
+
+.info_list {
+  width: 100%;
+}
+.info_list .info_li {
+  margin-bottom: 40px;
+}
+.info_list .info_li .icon-location, .info_list .info_li .icon-phone, .info_list .info_li .icon-inbox, .info_list .info_li .icon-clock {
+  color: #7e5aff;
+}
+.info_list .info_li .info_span {
+  color: #2c4058;
+  font-family: "GothamBook";
+  font-weight: 350;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+.form_wrap {
+  width: 100%;
+}
+
+#footer {
+  background: url(../images/jpeg/footer_fon.png) no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding: 204px 0;
+}
+#footer .footer_info-wrap {
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+#footer .footer_copy-wrap {
+  color: #fff;
+  line-height: 20px;
+  font-family: "GothamBook";
+  font-weight: 350;
+  font-size: 14px;
+}
+#footer .footer_copy-wrap .footer_copy {
+  padding: 0 20px 0 0;
+  border-right: 1px solid #fff;
+}
+#footer .footer_copy-wrap .footer_made {
+  padding: 0 0 0 20px;
+}
