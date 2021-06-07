@@ -85,6 +85,9 @@ main {
             transition: all 0.5s linear 0s;
         }
     }
+    .lSSlideOuter .lSPager.lSpg .active a{
+        background-color: #fff;
+    }
 }
 
 header{
@@ -424,11 +427,12 @@ h3{
     }
     .lSSlideOuter .lSPager.lSpg > li{
         margin-top: 58px;
+        margin-right: 10px;
         a{
             background-color: transparent;
             border: 2px solid #fff;
             border-radius: 30px;
-            display: inline-block;
+            display: block;
             height: 9px;
             overflow: hidden;
             text-indent: -999em;
@@ -437,6 +441,9 @@ h3{
             z-index: 99;
             transition: all 0.5s linear 0s;
         }
+    }
+    .lSSlideOuter .lSPager.lSpg .active a{
+        background-color: #fff;
     }
     .cards_wrap{
         width: 100%;
@@ -479,7 +486,9 @@ h3{
             height: 75px;
             line-height: 34px;
             overflow-y: hidden;
-            color: #2c4058;
+            a{
+                color: #2c4058;
+            }
         }
     }  
 }

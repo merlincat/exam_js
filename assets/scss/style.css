@@ -72,6 +72,9 @@ main {
   z-index: 99;
   transition: all 0.5s linear 0s;
 }
+#home .lSSlideOuter .lSPager.lSpg .active a {
+  background-color: #fff;
+}
 
 header {
   width: 100%;
@@ -414,12 +417,13 @@ h3 {
 }
 #latest_news .lSSlideOuter .lSPager.lSpg > li {
   margin-top: 58px;
+  margin-right: 10px;
 }
 #latest_news .lSSlideOuter .lSPager.lSpg > li a {
   background-color: transparent;
   border: 2px solid #fff;
   border-radius: 30px;
-  display: inline-block;
+  display: block;
   height: 9px;
   overflow: hidden;
   text-indent: -999em;
@@ -427,6 +431,9 @@ h3 {
   position: relative;
   z-index: 99;
   transition: all 0.5s linear 0s;
+}
+#latest_news .lSSlideOuter .lSPager.lSpg .active a {
+  background-color: #fff;
 }
 #latest_news .cards_wrap {
   width: 100%;
@@ -469,6 +476,8 @@ h3 {
   height: 75px;
   line-height: 34px;
   overflow-y: hidden;
+}
+.card .card_content-wrap h3 a {
   color: #2c4058;
 }
 
