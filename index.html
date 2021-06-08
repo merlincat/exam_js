@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>monticello</title>
     
-    <link rel="stylesheet" href="assets/js/plugins/light_gallery/lightgallery.min.js">
+
     <link rel="stylesheet" href="assets/js/plugins/light_slider/css/lightslider.css">
     <link rel="stylesheet" href="assets/scss/style.min.css">
+    <link rel="stylesheet" href="assets/js/plugins/leaflet/leaflet.css">
     <!--links -->
     <!--robots-->
     <!--ogs-->
@@ -264,40 +265,44 @@
             </div>
         </div>
     </section>
-    <div id="map_wrap">
-        <!--MAP-->
-    </div>
-    <section class="section" id="get_in_touch">
-        <h2 class="section_header">get in touch</h2>
-        <div class="info_wrap df">
-            <ul class="info_list">
-                <li class="info_li">
-                    <a href="https://goo.gl/maps/VvbJz8ZveUKnU7EV6" target="_blank"><span class="icon-location"></span><span class="info_span">91 Nolan Extensions Suite 670</span></a>
-                </li>
-                <li class="info_li">
-                    <a href="tel:+001-356-868-2454"><span class="icon-phone"></span><span class="info_span">+001 356-868-2454</span></a>
-                </li>
-                <li class="info_li">
-                    <a href="mailto:gahuy93@gmail.com" target="_blank"><span class="icon-inbox"></span><span class="info_span">gahuy93@gmail.com</span></a>
-                </li>
-                <li class="info_li">
-                    <span class="icon-clock"></span><span class="info_span">From 07:05AM to 19:30PM</span>
-                </li>
-            </ul>
-            <div class="form_wrap">
-                <!-- форма для заполнения пользователем -->
-                <form class="contact_form" method="GET" action="#">
-                    <input class="form_input" type="text" name="visitor_name" id="visitor_name" placeholder="Enter Your First And Last Name">
-                    <input class="form_input" type="email" value="" placeholder="Email" name="email" id="email">
-                    <div class="btn-wrap df">
-                        <button type="submit" class="form_btn" name="send_form">
-                            submit
-                        </button>
-                    </div>
-                </form>
-            </div>
+    <div class="contacts">
+        <div id="map">
+            <!--MAP-->
         </div>
-    </section>
+        <section class="section" id="get_in_touch">
+            <h2 class="section_header">get in touch</h2>
+            <div class="info_wrap df">
+                <ul class="info_list">
+                    <li class="info_li">
+                        <a href="https://goo.gl/maps/VvbJz8ZveUKnU7EV6" target="_blank"><span class="icon-location"></span><span class="info_span">91 Nolan Extensions Suite 670</span></a>
+                    </li>
+                    <li class="info_li">
+                        <a href="tel:+001-356-868-2454"><span class="icon-phone"></span><span class="info_span">+001 356-868-2454</span></a>
+                    </li>
+                    <li class="info_li">
+                        <a href="mailto:gahuy93@gmail.com" target="_blank"><span class="icon-inbox"></span><span class="info_span">gahuy93@gmail.com</span></a>
+                    </li>
+                    <li class="info_li">
+                        <span class="icon-clock"></span><span class="info_span">From 07:05AM to 19:30PM</span>
+                    </li>
+                </ul>
+                <div class="form_wrap">
+                    <!-- форма для заполнения пользователем -->
+                    <form class="contact_form" method="GET" action="#">
+                        <input class="form_input" type="text" name="visitor_name" id="visitor_name" placeholder="Enter Your First And Last Name">
+                        <input class="form_input" type="email" value="" placeholder="Email" name="email" id="email">
+                        <div class="btn-wrap df">
+                            <button type="submit" class="form_btn" name="send_form">
+                                submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    
 </main>
     <footer id="footer">
         <div class="container-mini">
@@ -329,9 +334,8 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="assets/js/plugins/light_slider/js/lightslider.js"></script>
-    <script src="assets/js/plugins/light_gallery/lightgallery.min.js"></script>
-    <script src="assets/js/plugins/light_gallery/thumbnail/lg-thumbnail.min.js"></script>
-    <script src="assets/js/plugins/light_gallery/zoom/lg-zoom.min.js"></script>
+    <script src="assets/js/plugins/leaflet/leaflet.js"></script>
+
     <script src="assets/js/main.js"></script>
 
 </body>

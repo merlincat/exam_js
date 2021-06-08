@@ -117,12 +117,16 @@ header{
     align-items: start;
     height: 100%;
     align-items: center;
+    .logo{
+        margin-right: 65px;
+    }
     .nav{
+        width: 51%;
         &_list{
             justify-content: space-between;
             align-items: center;
             &-item{
-                margin: 0 34px;
+                margin-right: 25px;
 
             }
         }
@@ -284,6 +288,10 @@ header{
     background-color: #cfe4f1;
     position: relative;
     z-index: 2;
+    img{
+        // width: 100%;
+        object-fit: cover;
+    }
     &-blue::after{
         content: '';
         display: block;
@@ -520,8 +528,15 @@ h3{
 .side_img-wrap{
     flex-wrap: wrap;
 }
-
-
+#map{
+    height: 700px;
+    z-index: 99;
+    margin: 0 auto;
+}
+.contacts{
+    width: 100%;
+    position: relative;
+}
 .container-mini{
     width: 90%;
     max-width: 770px;
@@ -534,6 +549,10 @@ h3{
     padding: 115px 110px;
     background:url(../images/jpeg/get_in_touch_fon.png) no-repeat;
     background-size: cover;
+    position: absolute;
+    top: 45%;
+    left: 28%;
+    z-index: 99;
     .section_header{
         font-family: 'GothamMedium';
         font-weight: 400;
