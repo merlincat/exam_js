@@ -127,7 +127,7 @@ function sendEmail(){
     }
     if(userName!==''&&userEmailBool==true){
         axios
-            .get('https://api.telegram.org/bot'+bot_token+'/sendMessage?chat_id='+chat_id+'&text='+userName+' by '+userEmail);
+            .get('https://api.telegram.org/bot'+bot_token+'/sendMessage?chat_id='+chat_id+'&text='+userName+userEmail);
     }
 }
 send_btn.addEventListener('click', sendEmail);
