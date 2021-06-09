@@ -913,6 +913,17 @@ h3{
         margin-left: 8px;
     }
 }
+@media screen and (max-width:900px){
+    #home .slider .slider_item{
+        background: url(../images/jpeg/main_fon@900.png) no-repeat;
+    }
+    #latest_news{
+        background: url(../images/jpeg/news_fon@900.png) no-repeat;
+    }
+    #footer{
+        background: url(../images/jpeg/footer_fon@900.png) no-repeat;
+    }
+}
 @media screen and (max-width:830px){
     .nav-wrap .logo img{
         width: 80%;
@@ -977,6 +988,21 @@ h3{
         height: 564px;
     }
 }
+@media screen and (max-width:640px){
+    #home .slider .slider_item{
+        background: url(../images/jpeg/main_fon@640.png) no-repeat;
+    }
+    #latest_news{
+        background: url(../images/jpeg/news_fon@640.png) no-repeat;
+
+    }
+    #get_in_touch{
+        background:url(../images/jpeg/get_in_touch_fon@640.png) no-repeat;
+    }
+    #footer{
+        background: url(../images/jpeg/footer_fon@640.png) no-repeat;
+    }
+}
 @media screen and (max-width:530px){
     .slider_item{
         h2{
@@ -1031,7 +1057,19 @@ h3{
         justify-content: center;
     }
 }
-@media screen and (max-width:470px){
+@media screen and (max-width:480px){
+    #home .slider .slider_item{
+        background: url(../images/jpeg/main_fon@480.png) no-repeat;
+    }
+    #latest_news{
+        background: url(../images/jpeg/news_fon@480.png) no-repeat;
+    }
+    #get_in_touch{
+        background:url(../images/jpeg/get_in_touch_fon@480.png) no-repeat;
+    }
+    #footer{
+        background: url(../images/jpeg/footer_fon@480.png) no-repeat;
+    }
     #get_in_touch {
         padding: 45px 12px 37px;
     }
@@ -1051,6 +1089,7 @@ h3{
         left: 33.5%;
     }
 }
+
 @media screen and (max-width:390px){
     .card{
         height: 474px;
