@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>monticello</title>
     
-
-    <link rel="stylesheet" href="assets/js/plugins/light_slider/css/lightslider.css">
     <link rel="stylesheet" href="assets/scss/style.min.css">
+    <link rel="stylesheet" href="assets/js/plugins/light_slider/css/lightslider.css">
+    <link rel="stylesheet" href="assets/js/plugins/light_gallery/css/lightgallery-bundle.min.css">
     <link rel="stylesheet" href="assets/js/plugins/leaflet/leaflet.css">
     <!--links -->
     <!--robots-->
@@ -239,27 +239,33 @@
     <section class="section" id="gallery">
         <div class="container">
             <h2 class="section_header">gallery</h2>
-            <div class="photo_wrap df">
-                <div class="main_img" id="animated-thumbnails-gallery">
-                    <a href="assets/images/jpeg/gallery1.png">
-                        <img src="assets/images/jpeg/gallery1.png" alt="scott web photo">
-                     </a>
+                <div class="main_img" id="lightgallery">
+                    <a class="img-wrap one" href="assets/images/jpeg/gallery1.png">
+                        <span class="plus">
+                            <img src="assets/images/jpeg/gallery1.png" alt="photo1">
+                        </span>
+                    </a>
+                    <a class="img-wrap two" href="assets/images/jpeg/gallery2.png">
+                        <span class="plus">
+                            <img src="assets/images/jpeg/gallery2.png" alt="photo2">                                                
+                        </span>
+                    </a>
+                    <a class="img-wrap three" href="assets/images/jpeg/gallery3.png">
+                        <span class="plus">
+                            <img src="assets/images/jpeg/gallery3.png" alt="photo3">                    
+                        </span>
+                    </a>
+                    <a class="img-wrap four" href="assets/images/jpeg/gallery4.png">
+                        <span class="plus">
+                            <img src="assets/images/jpeg/gallery4.png" alt="photo4">                    
+                        </span>
+                    </a>
+                    <a class="img-wrap five" href="assets/images/jpeg/gallery5.png">
+                        <span class="plus">
+                            <img src="assets/images/jpeg/gallery5.png" alt="photo5">                    
+                        </span>
+                    </a>
                 </div>
-                <div class="side_img-wrap df">
-                    <div class="img-wrap">
-                        <img src="assets/images/jpeg/gallery2.png" alt="sec photo">
-                    </div>
-                    <div class="img-wrap">
-                        <img src="assets/images/jpeg/gallery3.png" alt="third photo">
-                    </div>
-                    <div class="img-wrap">
-                        <img src="assets/images/jpeg/gallery4.png" alt="forth photo">
-                    </div>
-                    <div class="img-wrap">
-                        <img src="assets/images/jpeg/gallery5.png" alt="fifth photo">
-                    </div>
-                </div>
-            </div>
             <div class="button">
                 <a class="button-link" href="#">see details</a>
             </div>
@@ -334,6 +340,9 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="assets/js/plugins/light_slider/js/lightslider.js"></script>
+    <script src="assets/js/plugins/light_gallery/lightgallery.min.js"></script>
+    <script src="assets/js/plugins/light_gallery/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="assets/js/plugins/light_gallery/plugins/thumbnail/lg-thumbnail.min.js"></script>
     <script src="assets/js/plugins/leaflet/leaflet.js"></script>
 
     <script src="assets/js/main.js"></script>

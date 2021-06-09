@@ -57,7 +57,7 @@ main {
 }
 #home .lSSlideOuter .lSPager.lSpg > li {
   display: block;
-  margin-bottom: 40px;
+  margin-bottom: 34px;
 }
 #home .lSSlideOuter .lSPager.lSpg > li a {
   background-color: transparent;
@@ -78,13 +78,14 @@ main {
 
 header {
   width: 100%;
-  height: 108px;
+  height: 130px;
   max-width: inherit;
   z-index: 100;
   transition: all 0.2s ease;
   position: fixed;
   left: 0;
   top: 0;
+  padding-top: 30px;
 }
 header .container {
   height: 100%;
@@ -95,26 +96,30 @@ header .container {
   box-shadow: 0 0 3px #999;
   background-color: rgba(132, 157, 241, 0.9);
   backdrop-filter: blur(3px);
+  padding-top: 0;
 }
 
 .nav-wrap {
-  justify-content: space-between;
-  align-items: start;
   height: 100%;
   align-items: center;
 }
 .nav-wrap .logo {
-  margin-right: 65px;
+  margin-right: 80px;
 }
 .nav-wrap .nav {
-  width: 51%;
+  flex: 1;
 }
 .nav-wrap .nav_list {
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 .nav-wrap .nav_list-item {
   margin-right: 25px;
+  flex: 1;
+}
+.nav-wrap .nav_list-item:last-child {
+  margin-right: 0px;
 }
 
 .list_item-link {
@@ -218,21 +223,23 @@ header .container {
   flex-direction: column;
 }
 #home .scroll {
-  left: 50%;
-  bottom: 48px;
+  left: 49%;
+  bottom: 50px;
 }
 
 .slider_item h2 {
+  padding-top: 44px;
   font-family: "GothamBold", sans-serif;
   font-size: 80px;
   line-height: 80px;
   text-transform: uppercase;
   color: #fff;
   letter-spacing: 2px;
-  margin-bottom: 38px;
+  margin-bottom: 30px;
 }
 .slider_item h3 {
   font-family: "GothamBook", sans-serif;
+  font-weight: 350;
   font-size: 18px;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -241,11 +248,11 @@ header .container {
 
 #what_we_do {
   background-color: #fff;
-  padding: 98px 0 0 0;
+  padding: 134px 0 0 0;
   overflow-x: hidden;
 }
 #what_we_do .section_fheader {
-  margin-bottom: 170px;
+  margin-bottom: 165px;
   position: relative;
 }
 #what_we_do .section_fheader::before {
@@ -254,8 +261,8 @@ header .container {
   position: absolute;
   width: 100px;
   border-top: 2px solid #2c4058;
-  left: 46%;
-  top: -40px;
+  left: 45.6%;
+  top: -34px;
 }
 
 .section_header {
@@ -511,8 +518,70 @@ h3 {
   color: #55b7ff;
 }
 
-.side_img-wrap {
-  flex-wrap: wrap;
+#gallery {
+  padding: 180px 0 140px 0;
+}
+#gallery .section_header {
+  font-family: "GothamBook", sans-serif;
+  line-height: 44px;
+  margin-bottom: 100px;
+}
+#gallery .section_header::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100px;
+  border-top: 2px solid #2c4058;
+  left: 46%;
+  top: -30px;
+}
+#gallery .button {
+  text-align: center;
+}
+
+.main_img {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4);
+  grid-gap: 10px;
+  margin-bottom: 60px;
+}
+.main_img .one {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.main_img .two {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+.main_img .plus {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_img .plus::before {
+  content: "+";
+  color: #fff;
+  line-height: 80px;
+  font-size: 50px;
+  font-weight: 100;
+  text-align: center;
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  z-index: 99;
+  opacity: 1;
+}
+.main_img .plus img {
+  width: 100%;
+  object-fit: cover;
 }
 
 #map {

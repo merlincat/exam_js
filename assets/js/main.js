@@ -90,3 +90,7 @@ L.marker([40.64740434388478, -73.9088304023876],{icon: myIcon}).addTo(map)
     //     maxZoom: 20,
     //     attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
     // });
+lightGallery(document.getElementById('lightgallery'), {
+   plugins: [lgZoom, lgThumbnail],
+    speed: 500,
+});
