@@ -51,32 +51,7 @@ $(function () {
     controls: false,
     vertical: true,
     verticalHeight: 720,
-    verticalSwiping: true // responsive: [
-    //     {
-    //       breakpoint: 1024,
-    //       settings: {
-    //         slidesToShow: 3,
-    //         slidesToScroll: 3,
-    //         infinite: true,
-    //         dots: true
-    //       }
-    //     },
-    //     {
-    //       breakpoint: 600,
-    //       settings: {
-    //         slidesToShow: 2,
-    //         slidesToScroll: 2
-    //       }
-    //     },
-    //     {
-    //       breakpoint: 480,
-    //       settings: {
-    //         slidesToShow: 1,
-    //         slidesToScroll: 1
-    //       }
-    //     }
-    //   ],
-
+    verticalSwiping: true
   });
   $("#cards_list").lightSlider({
     item: 3,
@@ -90,7 +65,28 @@ $(function () {
     auto: true,
     loop: true,
     pause: 2500,
-    controls: true // verticalHeight:720,
+    controls: true,
+    responsive: [{
+      breakpoint: 960,
+      settings: {
+        item: 2,
+        slideMove: 1
+      }
+    }, // {
+    //   breakpoint:760,
+    //   settings: {
+    //     item:1,
+    //     slideMove:1
+    //   }
+    // },
+    {
+      breakpoint: 530,
+      settings: {
+        slideMargin: 10,
+        item: 1,
+        slideMove: 1
+      }
+    }] // verticalHeight:720,
     // verticalSwiping: true,
 
   });
