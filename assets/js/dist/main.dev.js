@@ -1,6 +1,43 @@
 "use strict";
 
 $(function () {
+  $(".hamburger, #nav_shadow").click(function () {
+    $(".hamburger").toggleClass("is-active");
+    $("body").toggleClass("open");
+  });
+  $(".m_list_item-link").click(function () {
+    $(".hamburger").removeClass("is-active");
+    $("body").removeClass("open");
+  });
+  $(".m_list_item-link").click(function (e) {
+    e.preventDefault();
+    var top = $($(this).attr("href")).offset().top;
+    $("html, body").animate({
+      scrollTop: top
+    }, 400);
+  });
+});
+$(function () {
+  $("#mobile_nav").on("click", "a", function (event) {
+    event.preventDefault();
+    var id = $(this).attr('href'),
+        top = $(id).offset().top;
+    $('body,html').animate({
+      scrollTop: top
+    }, 1500);
+  });
+});
+$(function () {
+  $("#home").on("click", "a", function (event) {
+    event.preventDefault();
+    var id = $(this).attr('href'),
+        top = $(id).offset().top;
+    $('body,html').animate({
+      scrollTop: top
+    }, 1000);
+  });
+});
+$(function () {
   $("#slider").lightSlider({
     item: 1,
     mode: 'fade',

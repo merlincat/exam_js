@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>monticello</title>
-    
-    <link rel="stylesheet" href="assets/scss/style.min.css">
     <link rel="stylesheet" href="assets/js/plugins/light_slider/css/lightslider.css">
     <link rel="stylesheet" href="assets/js/plugins/light_gallery/css/lightgallery-bundle.min.css">
+    <link rel="stylesheet" href="assets/scss/hamburgers.min.css">
+    <link rel="stylesheet" href="assets/scss/style.min.css">
+
     <!-- <link rel="stylesheet" href="assets/js/plugins/leaflet/leaflet.css"> -->
     <!--links -->
     <!--robots-->
@@ -16,14 +17,37 @@
     <!--ogs twitter-->
     <!--plugs-->
     <!--mob menu-->
-
     <!--шрифты и другие линки-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- mob menu -->
-
+<!-- мобильное меню с правой стороны -->
+<div id="mobile_nav_block">
+    <div class="mob_header">
+        <img src="assets/images/jpeg/Logo.png" alt="logo">
+        <!-- гамбургер для моб меню -->
+        <button class="hamburger hamburger--spin" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </div>
+    <!-- само моб меню -->
+    <nav class="mobile_nav">
+        <ul class="m_nav_list">
+            <li class="m_list_item"><a href="#home" class="m_list_item-link">Main</a></li>
+            <li class="m_list_item"><a href="#what_we_do" class="m_list_item-link">About Us</a></li>
+            <li class="m_list_item"><a href="#what_we_do" class="m_list_item-link">projects</a></li>
+            <li class="m_list_item"><a href="#latest_news" class="m_list_item-link">news</a></li>
+            <li class="m_list_item"><a href="#gallery" class="m_list_item-link">gallery</a></li>
+            <li class="m_list_item"><a href="#get_in_touch" class="m_list_item-link">contact</a></li>
+        </ul>
+    </nav>
+</div>
+<!-- тень за моб меню -->
+<div id="nav_shadow"></div>
     <!--разметка сайта для десктоп-->
     <!--menu-->
     <header class="header">
@@ -35,10 +59,10 @@
                 </div>
                 <nav class="nav">
                     <ul class="nav_list df">
-                        <li class="nav_list-item"><a href="#" class="list_item-link">About Us</a></li>
-                        <li class="nav_list-item"><a href="#" class="list_item-link">projects</a></li>
-                        <li class="nav_list-item"><a href="#" class="list_item-link">news</a></li>
-                        <li class="nav_list-item"><a href="#" class="list_item-link">contact</a></li>
+                        <li class="nav_list-item"><a href="#what_we_do" class="list_item-link">About Us</a></li>
+                        <li class="nav_list-item"><a href="#gallery" class="list_item-link">projects</a></li>
+                        <li class="nav_list-item"><a href="#latest_news" class="list_item-link">news</a></li>
+                        <li class="nav_list-item"><a href="#get_in_touch" class="list_item-link">contact</a></li>
                     </ul>
                 </nav>
                 <div class="soc_wrap">
@@ -49,6 +73,11 @@
                         <li class="soc_list-item"><a class="soc_item-link icon-instagram" href="https://www.instagram.com/" target="_blank" rel="nofollow noopener"></a></li>
                     </ul>
                 </div>
+                <button class="hamburger hamburger--spin" type="button">
+                    <span class="hamburger-box">
+                      <span class="hamburger-inner"></span>
+                    </span>
+                </button>
             </div>
         </div>
     </header>
@@ -77,8 +106,9 @@
                 <h3>We guarantee long time support</h3>
             </div>
         </div>
-        <span class="scroll">
-        </span>
+        <a href="#what_we_do">
+            <span class="scroll"></span>
+        </a>
     </div>
     <section class="section" id="what_we_do">
         <div class="container">
