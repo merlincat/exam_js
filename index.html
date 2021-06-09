@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/scss/style.min.css">
     <link rel="stylesheet" href="assets/js/plugins/light_slider/css/lightslider.css">
     <link rel="stylesheet" href="assets/js/plugins/light_gallery/css/lightgallery-bundle.min.css">
-    <link rel="stylesheet" href="assets/js/plugins/leaflet/leaflet.css">
+    <!-- <link rel="stylesheet" href="assets/js/plugins/leaflet/leaflet.css"> -->
     <!--links -->
     <!--robots-->
     <!--ogs-->
@@ -82,7 +82,7 @@
         <div class="container">
             <h2 class="section_header section_fheader">what we do</h2>
         </div>
-        <div class="section_inner">
+        <div class="section_inner section_inner-first">
             <div class="container">
                 <div class="section_content-wrap df">
                     <div class="img_wrap img_wrap-blue">
@@ -267,13 +267,15 @@
                     </a>
                 </div>
             <div class="button">
-                <a class="button-link" href="#">see details</a>
+                <a class="button-link" href="#">see more</a>
             </div>
         </div>
     </section>
     <div class="contacts">
         <div id="map">
             <!--MAP-->
+            <img src="assets/images/jpeg/map.png" id="map_jpg" alt="map">
+            <a href="javascript:void(0);"id="map_link">Click to map</a>
         </div>
         <section class="section" id="get_in_touch">
             <h2 class="section_header">get in touch</h2>
@@ -296,9 +298,9 @@
                     <!-- форма для заполнения пользователем -->
                     <form class="contact_form" method="GET" action="#">
                         <input class="form_input" type="text" name="visitor_name" id="visitor_name" placeholder="Enter Your First And Last Name">
-                        <input class="form_input" type="email" value="" placeholder="Email" name="email" id="email">
+                        <input class="form_input form_input-last" type="email" placeholder="Email" name="email" id="email">
                         <div class="btn-wrap df">
-                            <button type="submit" class="form_btn" name="send_form">
+                            <button type="button" class="form_btn" name="send_form" id="send_btn">
                                 submit
                             </button>
                         </div>
@@ -343,8 +345,8 @@
     <script src="assets/js/plugins/light_gallery/lightgallery.min.js"></script>
     <script src="assets/js/plugins/light_gallery/plugins/zoom/lg-zoom.min.js"></script>
     <script src="assets/js/plugins/light_gallery/plugins/thumbnail/lg-thumbnail.min.js"></script>
-    <script src="assets/js/plugins/leaflet/leaflet.js"></script>
-
+    <!-- <script src="assets/js/plugins/leaflet/leaflet.js"></script> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="assets/js/main.js"></script>
 
 </body>

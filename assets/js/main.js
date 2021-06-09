@@ -66,25 +66,40 @@ $(function(){
         }
     });
 });
-let map = L.map('map').setView([40.64740434388478, -73.9088304023876], 15);
 
 
-L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-}).addTo(map);
-let myIcon = L.icon({
-    iconUrl: 'assets/js/plugins/leaflet/images/pin.png',
+let map;
+function initMap(){
+    map = L.map('map').setView([40.64740434388478, -73.9088304023876], 15);
+    L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+    let myIcon = L.icon({
+        iconUrl: 'assets/js/plugins/leaflet/images/pin.png',
     // shadowUrl: 'pin.png',
 
-    iconSize:     [106, 106], // size of the icon
+        iconSize:     [106, 106], // size of the icon
     // shadowSize:   [50, 64], // size of the shadow
     // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
     // shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-});
+        popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
 
-L.marker([40.64740434388478, -73.9088304023876],{icon: myIcon}).addTo(map)
-    .bindPopup('POP UP')
+    L.marker([40.64740434388478, -73.9088304023876],{icon: myIcon}).addTo(map)
+        .bindPopup('POP UP');
+}
+map_link.addEventListener('click', function(){
+    let link =document.createElement('link');
+    link.setAttribute('rel', 'stylesheet');
+    link.setAttribute('href', 'assets/js/plugins/leaflet/leaflet.css');
+    document.head.append(link);
+    let script = document.createElement('script');
+    script.setAttribute('src','assets/js/plugins/leaflet/leaflet.js');
+    document.body.append(script);
+    script.onload = initMap;
+    map_link.remove();
+    map_jpg.remove();
+});
 
     // Stadia_AlidadeSmooth = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
     //     maxZoom: 20,
@@ -94,3 +109,14 @@ lightGallery(document.getElementById('lightgallery'), {
    plugins: [lgZoom, lgThumbnail],
     speed: 500,
 });
+function sendEmail(){
+    const bot_token = '1879069302:AAG83kXDUj8RSCEtmC21DlYDWG260Na4R6w';
+    const chat_id = '-1001456310972';
+    const userName = visitor_name.value;
+    const userEmail = email.value;
+    if(userName!==''){
+        axios
+            .get('https://api.telegram.org/bot'+bot_token+'/sendMessage?chat_id='+chat_id+'&text='+userName+userEmail);
+    }
+}
+send_btn.addEventListener('click', sendEmail);
