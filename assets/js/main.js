@@ -109,14 +109,25 @@ lightGallery(document.getElementById('lightgallery'), {
    plugins: [lgZoom, lgThumbnail],
     speed: 500,
 });
+
+
+function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
 function sendEmail(){
     const bot_token = '1879069302:AAG83kXDUj8RSCEtmC21DlYDWG260Na4R6w';
     const chat_id = '-1001456310972';
     const userName = visitor_name.value;
     const userEmail = email.value;
-    if(userName!==''){
+    const userEmailBool = validateEmail(email.value);
+    if(userEmailBool==false){
+        alert('Please, enter correct email');
+    }
+    if(userName!==''&&userEmailBool==true){
         axios
-            .get('https://api.telegram.org/bot'+bot_token+'/sendMessage?chat_id='+chat_id+'&text='+userName+userEmail);
+            .get('https://api.telegram.org/bot'+bot_token+'/sendMessage?chat_id='+chat_id+'&text='+userName+' by '+userEmail);
     }
 }
 send_btn.addEventListener('click', sendEmail);

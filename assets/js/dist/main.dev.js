@@ -113,14 +113,24 @@ lightGallery(document.getElementById('lightgallery'), {
   speed: 500
 });
 
+function validateEmail(email) {
+  var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
 function sendEmail() {
   var bot_token = '1879069302:AAG83kXDUj8RSCEtmC21DlYDWG260Na4R6w';
   var chat_id = '-1001456310972';
   var userName = visitor_name.value;
   var userEmail = email.value;
+  var userEmailBool = validateEmail(email.value);
 
-  if (userName !== '') {
-    axios.get('https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + chat_id + '&text=' + userName + userEmail);
+  if (userEmailBool == false) {
+    alert('Please, enter correct email');
+  }
+
+  if (userName !== '' && userEmailBool == true) {
+    axios.get('https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + chat_id + '&text=' + userName + ' by ' + userEmail);
   }
 }
 
