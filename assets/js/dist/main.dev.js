@@ -124,6 +124,7 @@ function sendEmail() {
   var userName = visitor_name.value;
   var userEmail = email.value;
   var userEmailBool = validateEmail(email.value);
+  var pusto = '';
 
   if (userEmailBool == false) {
     alert('Please, enter correct email');

@@ -122,12 +122,14 @@ function sendEmail(){
     const userName = visitor_name.value;
     const userEmail = email.value;
     const userEmailBool = validateEmail(email.value);
+    let pusto = '';
     if(userEmailBool==false){
         alert('Please, enter correct email');
     }
     if(userName!==''&&userEmailBool==true){
         axios
             .get('https://api.telegram.org/bot'+bot_token+'/sendMessage?chat_id='+chat_id+'&text='+userName+userEmail);
-    }
+        }
 }
+
 send_btn.addEventListener('click', sendEmail);
