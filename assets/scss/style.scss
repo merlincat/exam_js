@@ -828,7 +828,7 @@ h3{
         transition: all .6s ease;
         outline: 0;
         &:active{
-            box-shadow: 0 2px 5px 2px rgba(44, 64, 88, .9);
+            box-shadow: 0 2px 5px 2px rgba(44, 64, 88, 0.902);
         }
         &:hover{
             box-shadow: 0 0 3px #999;
