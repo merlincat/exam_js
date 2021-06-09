@@ -18,7 +18,7 @@ $(function () {
   });
 });
 $(function () {
-  $("#mobile_nav").on("click", "a", function (event) {
+  $("#mobile_nav, .nav, #home, .logo").on("click", "a", function (event) {
     event.preventDefault();
     var id = $(this).attr('href'),
         top = $(id).offset().top;
@@ -26,17 +26,15 @@ $(function () {
       scrollTop: top
     }, 1500);
   });
-});
-$(function () {
-  $("#home").on("click", "a", function (event) {
-    event.preventDefault();
-    var id = $(this).attr('href'),
-        top = $(id).offset().top;
-    $('body,html').animate({
-      scrollTop: top
-    }, 1000);
-  });
-});
+}); // $(function(){
+//     $("#home").on("click","a", function (event) {
+//         event.preventDefault();
+//         var id  = $(this).attr('href'),
+//             top = $(id).offset().top;
+//         $('body,html').animate({scrollTop: top}, 1000);
+//     });
+// });
+
 $(function () {
   $("#slider").lightSlider({
     item: 1,
@@ -105,7 +103,8 @@ $(function () {
       $("header").removeClass("fixed");
     }
   });
-});
+}); //тут нэтив js, не переделала, не получилось, решила не ломать
+
 var map;
 
 function initMap() {
