@@ -42,11 +42,22 @@
 // написать переменные, вынести их в отдельный файл - цвета или повторяющееся фрагменты
 $base_font:16;
 $base_color:#fff;
+$box_shadow_color:#999;
+$bg_color_fixed:rgba(132, 157, 241, 0.9);
+$hover_color:#7d5dfa;
+$base_transp_color:rgba(255, 255, 255, .8);
+$nav_block_color:rgba(112, 82, 171, 0.7);
+$border_list_color:#a75ada;
+$header2_color:#2c4058;
+$after_color:#55b7ff;
+$vio_after_color:#7e5aff;
+$section_p_color:#4b5562;
+$border_color:rgba(44, 64, 88, .9);
 @mixin fz($rem){
     font-size: ($rem/$base_font)+rem;
 }
 html{
-    font-size: $base_font;
+    font-size: 16px;
 }
 a{
     text-decoration: none;
@@ -73,7 +84,7 @@ main {
         margin-bottom: 34px; 
         a{
             background-color: transparent;
-            border: 2px solid #fff;
+            border: 2px solid $base_color;
             border-radius: 30px;
             display: inline-block;
             height: 9px;
@@ -86,7 +97,7 @@ main {
         }
     }
     .lSSlideOuter .lSPager.lSpg .active a{
-        background-color: #fff;
+        background-color: $base_color;
     }
 }
 
@@ -108,12 +119,72 @@ header{
 }
 .fixed{
     height: 60px;
-    box-shadow: 0 0 3px #999;
-    background-color: rgba(132, 157, 241, 0.9);
+    box-shadow: 0 0 3px $box_shadow_color;
+    background-color: $bg_color_fixed;
     backdrop-filter: blur(3px);
     padding-top: 0;
 }
+.hamburger {
+    display: none;
+}
+#nav_shadow{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $base_transp_color;
+    display: none;
+    backdrop-filter: blur(3px);
+    z-index: 100;
+}
 
+#mobile_nav_block {
+    position: fixed;
+    top: 0;
+    left: -110%;
+    height: 100%;
+    width: 100%;
+    max-width: 400px;
+    background-color: $nav_block_color;
+    z-index: 101;
+    transition: all .4s ease;
+    box-shadow: 0 0 5px #000;
+    .mob_header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        height: 75px;
+    }
+}
+.open #nav_shadow {
+    display: block;
+}
+.open #mobile_nav_block{
+    left: 0;
+}
+.mobile_nav {
+    height: calc(100% - 80px);
+    // overflow-y: scroll;
+    background-color: rgba(249, 248, 251, .7);
+    .m_list_item {
+        border-bottom: 3px solid $border_list_color;
+        .m_list_item-link {
+            display: inline-block;
+            padding: 15px;
+            @include fz(18);
+            line-height: 24px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #262626;
+            width: 100%;
+            transition: all .7s ease;
+            &:hover{
+                background-color: rgba(193, 178, 223, 0.7);
+            }
+        }
+    }
+}
 .nav-wrap {
     // justify-content: space-between;
     height: 100%;
@@ -136,16 +207,16 @@ header{
             &-item{
                 margin-right: 25px;
                 &:last-child{
-                    margin-right: 0px;
+                    margin-right: 0;
                 }
             }
         }
     }
 }
 .list_item-link {
-    color: #fff;
+    color: $base_color;
     text-transform: uppercase;
-    font-size: 14px;
+    @include fz(14);
     font-family: 'GothamBook', sans-serif;
     letter-spacing: 1px;
     position: relative;
@@ -158,100 +229,40 @@ header{
         height: 9px;
         border-radius: 50%;
         background-color: transparent;
-        border: 2px solid #fff;
+        border: 2px solid $base_color;
         position: absolute;
         left: -24px;
         top: 0;
         transition:  all 1.5s ease;
     }
     &:hover{
-        border-bottom: 2px solid #fff;
+        border-bottom: 2px solid $base_color;
         transition:  all 1.5s ease;
         &::before{
-            background-color: #fff;
+            background-color: $base_color;
         }
     }
 }
 .soc_list-item{
-    margin-left: 20px;
+    margin-left: 8px;
     .soc_item-link{
         display: inline-block;
         width: 40px;
         height: 40px;
         background-color: transparent;
         border-radius: 50%;
-        border: 2px solid #fff;
+        border: 2px solid $base_color;
         line-height: 38px;
         text-align: center;
-        color: #fff;
+        color: $base_color;
         transition:  all 1s ease;
         &:hover{
-            background-color: #fff;
-            color: #7d5dfa;
+            background-color: $base_color;
+            color: $hover_color;
         }
     }
-}
-.hamburger {
-    display: none;
-}
-#nav_shadow{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, .8);
-    display: none;
-    backdrop-filter: blur(3px);
-    z-index: 100;
 }
 
-#mobile_nav_block {
-    position: fixed;
-    top: 0;
-    left: -110%;
-    height: 100%;
-    width: 100%;
-    max-width: 400px;
-    background-color: rgba(112, 82, 171, 0.7);
-    z-index: 101;
-    transition: all .4s ease;
-    box-shadow: 0 0 5px #000;
-    .mob_header {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-        height: 75px;
-    }
-}
-.open #nav_shadow {
-    display: block;
-}
-.open #mobile_nav_block{
-    left: 0;
-}
-.mobile_nav {
-    height: calc(100% - 80px);
-    // overflow-y: scroll;
-    background-color: rgba(249, 248, 251, .7);
-    .m_list_item {
-        border-bottom: 3px solid #a75ada;
-        .m_list_item-link {
-            display: inline-block;
-            padding: 15px;
-            font-size: 18px;
-            line-height: 24px;
-            text-decoration: none;
-            text-transform: uppercase;
-            color: #262626;
-            width: 100%;
-            transition: all .7s ease;
-            &:hover{
-                background-color: rgba(193, 178, 223, 0.7);
-            }
-        }
-    }
-}
 .scroll {
     width: 40px;
     height: 40px;
@@ -278,10 +289,10 @@ header{
         // поправить позицию по пп
     }
     &:hover{
-        background-color: #fff;
+        background-color: $base_color;
         &:after{
-            border-right: 2px solid #7d5dfa;
-            border-bottom: 2px solid #7d5dfa;
+            border-right: 2px solid $hover_color;
+            border-bottom: 2px solid $hover_color;
         }
     }
 }
@@ -309,10 +320,10 @@ header{
     h2{
         padding-top: 44px;
         font-family: 'GothamBold', sans-serif;
-        font-size: 80px;
+        @include fz(80);
         line-height: 80px;
         text-transform: uppercase;
-        color: #fff;
+        color: $base_color;
         letter-spacing: 2px;
         margin-bottom: 30px;
         text-align: center;
@@ -320,10 +331,10 @@ header{
     h3{
         font-family: 'GothamBook', sans-serif;
         font-weight: 350;
-        font-size: 18px;
+        @include fz(18px);
         letter-spacing: 5px;
         text-transform: uppercase;
-        color: #fff;
+        color: $base_color;
         text-align: center;
     }
 }
@@ -331,7 +342,7 @@ header{
 
 #what_we_do{
     // height: auto;
-    background-color: #fff;
+    background-color: $base_color;
     padding: 134px 0 0 0;
     overflow-x: hidden;
     .section_fheader{
@@ -342,7 +353,7 @@ header{
             display: block;
             position: absolute;
             width: 100px;
-            border-top: 2px solid #2c4058;
+            border-top: 2px solid $header2_color;
             left: 45.6%;
             top: -34px;
         }
@@ -361,10 +372,10 @@ header{
 }
 .section_header{
     font-family: 'GothamBold', sans-serif;
-    font-size: 44px;
+    @include fz(44px);
     text-transform: uppercase;
     line-height: 44px;
-    color:#2c4058;
+    color:$header2_color;
     text-align: center;
     position: relative;
     margin-bottom: 36px;
@@ -388,7 +399,7 @@ header{
         height: 100%;
         top: -70px;
         left: -42%;
-        background-color: #55b7ff;
+        background-color: $after_color;
         z-index: -1;
     }
     &-violet::after{
@@ -399,15 +410,15 @@ header{
         height: 100%;
         top: -70px;
         right: -42%;
-        background-color: #7e5aff;
+        background-color: $vio_after_color;
         z-index: -1;
     }
 }
 
 h3{
     font-family: 'GothamBook', sans-serif;
-    color: #2c4058;
-    font-size: 22px;
+    color: $header2_color;
+    @include fz(22);
     text-transform: uppercase;
     line-height: 22px;
     // margin-bottom: 16px;
@@ -426,8 +437,8 @@ h3{
 }
 .section_p{
     font-family: 'OpenSans', sans-serif;
-    font-size: 18px;
-    color: #4b5562;
+    @include fz(18);
+    color: $section_p_color;
     line-height: 30px;
     margin-bottom: 30px;
 }
@@ -451,16 +462,16 @@ h3{
         @include fz(14);
         letter-spacing: .5px;
         line-height: 14px;
-        color: #2c4058;
+        color: $header2_color;
         text-transform: uppercase;
-        background-color: #fff;
+        background-color: $base_color;
         padding: 18px 36px;
         cursor: pointer;
         transition: all .9s ease;
         position: relative;
         overflow: hidden;
         z-index: 2;
-        border: 1px solid #2c4058;
+        border: 1px solid $header2_color;
         &:after {
             content:'';
             position: absolute;
@@ -468,14 +479,14 @@ h3{
             left: -20%;
             width: 0%;
             height: 100%;
-            background-color: rgba(44, 64, 88, .9);
+            background-color: $border_color;
             transition: all 1.2s ease;
             transform: skew(-45deg);
             z-index: -1;
         }
         &:hover{
-            color: #fff;
-            border: 1px solid rgba(44, 64, 88, .9);
+            color: $base_color;
+            border: 1px solid $border_color;
             &:after {
                 width: 150%;
             }
@@ -484,10 +495,10 @@ h3{
 
 }
 .address_span{
-    color: #2c4058;
+    color: $header2_color;
     font-family: 'GothamBook', sans-serif;
     font-style: italic;
-    font-size: 18px;
+    @include fz(18);
 }
 #latest_news{
     width: 100%;
@@ -513,7 +524,7 @@ h3{
         top: 44%;
     }
     .section_header{
-        color: #fff;
+        color: $base_color;
         margin-bottom: 93px;
         font-family: 'GothamMedium', sans-serif;
         font-weight: 400;
@@ -524,7 +535,7 @@ h3{
             display: block;
             position: absolute;
             width: 100px;
-            border-top: 1px solid #fff;
+            border-top: 1px solid $base_color;
             left: 45.5%;
             top: -36px;
         }
@@ -537,7 +548,7 @@ h3{
         }
         a{
             background-color: transparent;
-            border: 2px solid #fff;
+            border: 2px solid $base_color;
             border-radius: 30px;
             display: block;
             height: 9px;
@@ -550,12 +561,12 @@ h3{
         }
     }
     .lSSlideOuter .lSPager.lSpg .active a{
-        background-color: #fff;
+        background-color: $base_color;
     }
 }
 .card{
     height: 514px;
-    background-color: #fff;
+    background-color: $base_color;
     .card_image-wrap{
         img{
             width: 100%;
@@ -572,14 +583,14 @@ h3{
             line-height: 28px;
             font-family: 'OpenSans', sans-serif;
             font-weight: 400;
-            color: #4b5562;
+            color: $section_p_color;
         }
         h3{
             height: 75px;
             line-height: 34px;
             overflow-y: hidden;
             a{
-                color: #2c4058;
+                color: $header2_color;
             }
         }
     }  
@@ -595,7 +606,7 @@ h3{
     .author_info-wrap{
         h3{
             font-weight: 350;
-            font-size: 18px;
+            @include fz(18px);
             line-height: 36px;
             letter-spacing: .1px;
             height: auto;
@@ -603,8 +614,8 @@ h3{
         .data_span{
             font-family: 'GothamBook';
             font-weight: 350;
-            font-size: 14px;
-            color: #55b7ff;
+            @include fz(14);
+            color: $after_color;
         }
     }
 }
@@ -620,7 +631,7 @@ h3{
             display: block;
             position: absolute;
             width: 100px;
-            border-top: 2px solid #2c4058;
+            border-top: 2px solid $header2_color;
             left: 45.5%;
             top: -35px;
         }
@@ -660,16 +671,16 @@ h3{
         height: 100%;
         &::before{
             content: '+';
-            color: #fff;
+            color: $base_color;
             line-height: 80px;
-            font-size: 50px;
+            @include fz(50);
             font-weight:100;
             text-align:center;
             display: block;
             position: absolute;
             width: 80px;
             height: 80px;
-            border: 1px solid #fff;
+            border: 1px solid $base_color;
             border-radius: 50%;
             z-index: 99;
             opacity: 0;
@@ -733,7 +744,7 @@ h3{
         color: rgba(44, 64, 88, 1);
         text-align: center;
         line-height: 600px;
-        font-size: 34px;
+        @include fz(34);
         font-family: 'GothamBook', sans-serif;
         opacity: 0;
         transition: all .6s ease;
@@ -761,7 +772,7 @@ h3{
             display: block;
             position: absolute;
             width: 100px;
-            border-top: 2px solid #2c4058;
+            border-top: 2px solid $header2_color;
             left: 42%;
             top: -25px;
         }
@@ -773,13 +784,13 @@ h3{
     .info_li{
         margin-bottom: 39px;
         .icon-location,.icon-phone,.icon-inbox,.icon-clock{
-            color: #7e5aff;
+            color: $vio_after_color;
         }
         .info_span{
-            color: #2c4058;
+            color: $header2_color;
             font-family: 'GothamBook';
             font-weight: 350;
-            font-size: 18px;
+            @include fz(18);
             line-height: 18px;
         }
     }
@@ -793,8 +804,8 @@ h3{
         background-color: transparent;
         cursor: text;
         font-family: 'GothamBook', sans-serif;
-        font-size: 18px;
-        color: rgba(44, 64, 88, .9);
+        @include fz(18);
+        color: $border_color;
         line-height: 18px;
         border-width: 100%;
         border-style: none;
@@ -810,31 +821,31 @@ h3{
             color: rgba(44, 64, 88, .4);
         }
         &:focus{
-            border-bottom: 1px solid rgba(44, 64, 88, .9);
+            border-bottom: 1px solid $border_color;
         }
     }
     .form_btn{
         width: 45%;
         display: block;
-        color: #2c4058;
+        color: $header2_color;
         text-align: center;
         background-color: transparent;
         font: 350 14px 'GothamBook';
         line-height: 14px;
         text-transform: uppercase;
         padding: 20px 0;
-        border: 1px solid #2c4058;
+        border: 1px solid $header2_color;
         box-shadow: none;
         transition: all .6s ease;
         outline: 0;
         &:active{
-            box-shadow: 0 2px 5px 2px rgba(44, 64, 88, 0.902);
+            box-shadow: 0 2px 5px 2px rgba(44, 64, 88, 0.9);
         }
         &:hover{
-            box-shadow: 0 0 3px #999;
-            background-color: rgba(132, 157, 241, 0.9);
+            box-shadow: 0 0 3px $box_shadow_color;
+            background-color: $bg_color_fixed;
             border: none;
-            color: #fff;
+            color: $base_color;
         }
     }
 }
@@ -853,14 +864,14 @@ h3{
         margin-bottom: 40px;
     }
     .footer_copy-wrap{
-        color: #fff;
+        color: $base_color;
         line-height: 20px;
         font-family: 'GothamBook';
         font-weight: 350;
-        font-size: 14px;
+        @include fz(14);
         .footer_copy{
             padding: 0 20px 0 0;
-            border-right: 1px solid #fff;
+            border-right: 1px solid $base_color;
         }
         .footer_made{
             padding: 0 0 0 20px;
